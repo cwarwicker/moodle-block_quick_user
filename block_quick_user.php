@@ -54,6 +54,7 @@ class block_quick_user extends block_base
         $this->content->text .= "<div id='quick_user'><form id='quick_user_form' method='post' action=''><input type='text' id='quick_user_search' /></form></div>";
         $this->content->text .= "<br><div id='quick_user_results'></div>";
                 
+        $this->page->requires->jquery();
         $this->page->requires->js_init_call('M.block_quick_user.handlers', array($COURSE->id));
         
         return $this->content;       
