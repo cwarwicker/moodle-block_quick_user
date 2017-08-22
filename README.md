@@ -5,12 +5,14 @@ A simple block which lets you search for users in your Moodle system, with quick
 
 Requirements
 ------------
-Moodle 3.1+
+Moodle 3.3+
 
 
 Installation
 ------------
-Just install the plugin in your /blocks/ directory and then add it to a course page.
+- Download the plugin as a ZIP File and extract
+- Rename the folder from the git branch name "moodle-block_quick_user-master" to just "quick_user"
+- Place the folder in your /blocks/ directory and then add it to a course page.
 
 
 License
