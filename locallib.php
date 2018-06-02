@@ -28,7 +28,7 @@ defined('MOODLE_INTERNAL') || die();
 function block_quick_user_get_user_info($user, $courseID)
 {
     
-    global $CFG, $OUTPUT, $USER, $elbp;
+    global $CFG, $OUTPUT, $USER, $ELBP;
     
     $return = "";
     
@@ -43,28 +43,23 @@ function block_quick_user_get_user_info($user, $courseID)
     
     $context = context_course::instance($courseID);
     
-    // Has capability to view details of this course
-    if (has_capability('block/quick_user:viewdetails', $context)){
-        
-        $return .= "<div class='quick_user_centre'>";
-        
-        // Loginas
-        if (has_capability('moodle/user:loginas', $context) && $user->id <> $USER->id && !is_siteadmin($user->id)){
-            $return .= "<a href='{$CFG->wwwroot}/course/loginas.php?id={$courseID}&user={$user->id}&sesskey=".sesskey()."' title='".get_string('loginas')." ".fullname($user)."'><img src='".$OUTPUT->pix_url('t/lock')."' /></a>&nbsp;&nbsp;&nbsp;&nbsp;";
-        }
-        
-        // Message
-        $return .= "<a href='{$CFG->wwwroot}/message/index.php?id={$user->id}' title='".get_string('sendmessage', 'block_quick_user')." ".fullname($user)."' target='_blank'><img src='".$OUTPUT->pix_url('t/messages')."' /></a>&nbsp;&nbsp;&nbsp;&nbsp;";
-        
-        // ELBP block installed?
-        if ( $elbp ){
-            $return .= "<a href='{$CFG->wwwroot}/blocks/elbp/view.php?id={$user->id}' title='".get_string('viewelbp', 'block_elbp')." ".fullname($user)."' target='_blank'><img src='".$OUTPUT->pix_url('t/user')."' /></a>&nbsp;&nbsp;&nbsp;&nbsp;";
-        }
-        
-        $return .= "</div>";
-        
+    $return .= "<div class='quick_user_centre'>";
+
+    // Loginas
+    if (has_capability('moodle/user:loginas', $context) && $user->id <> $USER->id && !is_siteadmin($user->id)){
+        $return .= "<a href='{$CFG->wwwroot}/course/loginas.php?id={$courseID}&user={$user->id}&sesskey=".sesskey()."' title='".get_string('loginas')." ".fullname($user)."'><img src='".$OUTPUT->image_url('t/lock')."' /></a>&nbsp;&nbsp;&nbsp;&nbsp;";
     }
-        
+
+    // Message
+    $return .= "<a href='{$CFG->wwwroot}/message/index.php?id={$user->id}' title='".get_string('sendmessage', 'block_quick_user')." ".fullname($user)."' target='_blank'><img src='".$OUTPUT->image_url('t/messages')."' /></a>&nbsp;&nbsp;&nbsp;&nbsp;";
+
+    // ELBP block installed?
+    if ( $ELBP ){
+        $return .= "<a href='{$CFG->wwwroot}/blocks/elbp/view.php?id={$user->id}' title='".get_string('viewelbp', 'block_elbp')." ".fullname($user)."' target='_blank'><img src='".$OUTPUT->image_url('t/user')."' /></a>&nbsp;&nbsp;&nbsp;&nbsp;";
+    }
+
+    $return .= "</div>";
+                
     $return .= "<br>";
     
     return $return;
