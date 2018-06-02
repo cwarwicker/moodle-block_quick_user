@@ -10,7 +10,9 @@ Moodle 3.1+
 
 Installation
 ------------
-Just install the plugin in your /blocks/ directory and then add it to a course page.
+- Download the plugin as a ZIP File and extract
+- Rename the folder from the git branch name "moodle-block_quick_user-master" to just "quick_user"
+- Place the folder in your /blocks/ directory and then add it to a course page.
 
 
 License

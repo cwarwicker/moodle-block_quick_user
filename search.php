@@ -26,7 +26,7 @@ require_once '../../config.php';
 require_once 'locallib.php';
 
 // Is ELBP installed and visible?
-$ELBP = ($DB->get_record("block", array("name" => "elbp", "visible" => 1))) ? true : false;
+$elbp = ($DB->get_record("block", array("name" => "elbp", "visible" => 1))) ? true : false;
 
 require_login();
 
