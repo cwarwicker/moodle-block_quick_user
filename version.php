@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2018060200;
+$plugin->version = 2018072500;
 $plugin->requires = 2016052300;
 $plugin->component = 'block_quick_user';
 $plugin->maturity   = MATURITY_STABLE;
