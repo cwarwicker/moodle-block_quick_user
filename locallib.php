@@ -17,7 +17,7 @@
 
 /**
  * Script called by AJAX to return search results
- * 
+ *
  * @copyright 04-Jul-2013
  * @package DuckFusion
  * @version 1
@@ -26,24 +26,24 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-function block_quick_user_get_user_info($user, $courseID)
+function block_quick_user_get_user_info($user, $courseID, $elbp = false)
 {
-    
+
     global $CFG, $OUTPUT, $USER, $ELBP;
-    
+
     $return = "";
-    
+
     // Get their name, username and last access
-    $title = fullname($user) . 
-            ( (has_capability('moodle/user:editprofile', context_user::instance($user->id))) ? " ({$user->username})" : "" ) . 
+    $title = fullname($user) .
+            ( (has_capability('moodle/user:editprofile', context_user::instance($user->id))) ? " ({$user->username})" : "" ) .
             " ";
     $title .= get_string('lastaccess', 'block_quick_user') . ": " . format_time(time() - $user->lastaccess) . " " . get_string('ago', 'block_quick_user');
-    
+
     $return .= $OUTPUT->user_picture($user, array("courseid" => $courseID, "size" => 20));
     $return .= "<a href='{$CFG->wwwroot}/user/profile.php?id={$user->id}' target='_blank' title='{$title}'>".fullname($user)."</a><br>";
-    
+
     $context = context_course::instance($courseID);
-    
+
     $return .= "<div class='quick_user_centre'>";
 
     // Loginas
@@ -55,15 +55,15 @@ function block_quick_user_get_user_info($user, $courseID)
     $return .= "<a href='{$CFG->wwwroot}/message/index.php?id={$user->id}' title='".get_string('sendmessage', 'block_quick_user')." ".fullname($user)."' target='_blank'><img src='".$OUTPUT->image_url('t/messages')."' /></a>&nbsp;&nbsp;&nbsp;&nbsp;";
 
     // ELBP block installed?
-    if ( $ELBP ){
+    if ( $elbp ){
         $return .= "<a href='{$CFG->wwwroot}/blocks/elbp/view.php?id={$user->id}' title='".get_string('viewelbp', 'block_elbp')." ".fullname($user)."' target='_blank'><img src='".$OUTPUT->image_url('t/user')."' /></a>&nbsp;&nbsp;&nbsp;&nbsp;";
     }
 
     $return .= "</div>";
-                
+
     $return .= "<br>";
-    
+
     return $return;
-    
+
 }
 

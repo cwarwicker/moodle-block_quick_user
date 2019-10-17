@@ -26,7 +26,7 @@ require_once '../../config.php';
 require_once 'locallib.php';
 
 // Is ELBP installed and visible?
-$elbp = ($DB->get_record("block", array("name" => "elbp", "visible" => 1))) ? true : false;
+$elbp = ($DB->get_record("config_plugins", array("plugin" => "block_elbp"))) ? true : false;
 
 require_login();
 
@@ -49,7 +49,7 @@ if (!has_capability('block/quick_user:search', $context)){
 }
 
 $PAGE->set_context($context);
-        
+
 $output = "";
 
 // Exact Results
@@ -60,26 +60,26 @@ $results = $DB->get_records_select("user", "(username = ? OR idnumber = ? OR ".$
 if (!$results){
     $output .= "<em>".get_string('noresults', 'block_quick_user')."...</em>";
 } else {
-    
+
     $n = 0;
-    
+
     foreach($results as $result)
     {
-        
+
         if ($n >= 100){
             break;
         }
-        
-        $output .= block_quick_user_get_user_info($result, $courseID);        
+
+        $output .= block_quick_user_get_user_info($result, $courseID, $elbp);
         $n++;
-        
+
     }
-    
+
     // if more
     if (count($results) > 100){
         $output .= "<p class='quick_user_centre'><small>".get_string('moreresults', 'block_quick_user')."</small></p>";
     }
-    
+
 }
 
 
@@ -93,26 +93,26 @@ $results = $DB->get_records_select("user", "(".$DB->sql_like("username", "?", fa
 if (!$results){
     $output .= "<em>".get_string('noresults', 'block_quick_user')."...</em>";
 } else {
-    
+
     $n = 0;
-    
+
     foreach($results as $result)
     {
-        
+
         if ($n >= 100){
             break;
         }
-       
-        $output .= block_quick_user_get_user_info($result, $courseID);        
-        
+
+        $output .= block_quick_user_get_user_info($result, $courseID, $elbp);
+
         $n++;
-        
+
     }
-    
+
     if (count($results) > 100){
         $output .= "<p class='quick_user_centre'><small>".get_string('moreresults', 'block_quick_user')."</small></p>";
     }
-    
+
 }
 
 echo $output;
