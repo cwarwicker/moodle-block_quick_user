@@ -1,0 +1,16 @@
+<div class='quick_user_result'>
+
+    <div class='quick_user_user'>
+        {{{user.picture}}}
+        <a href='{{config.wwwroot}}/user/profile.php?id={{user.id}}' target='_blank' title='{{title}}'>{{user.name}}</a>
+    </div>
+
+    <div class='quick_user_links'>
+        {{#links}}
+            {{#.}}
+                <a href="{{{url}}}" target="_blank" title="{{title}}"><img src="{{img}}" alt="{{title}}" /></a>
+            {{/.}}
+        {{/links}}
+    </div>
+
+</div>

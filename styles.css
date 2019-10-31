@@ -1,16 +1,3 @@
-/* 
-    Document   : styles
-    Created on : 04-Jul-2013, 22:15:54
-    Author     : Conn
-    Description:
-        Purpose of the stylesheet follows.
-*/
-
-/* 
-   TODO customize this sample style
-   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
-*/
-
 div#quick_user
 {
     width: 90%;
@@ -21,6 +8,13 @@ div#quick_user input
 {
     width: 100%;
     text-align: left;
+}
+
+div#quick_user_results
+{
+    max-height: 400px;
+    overflow-y: auto;
+    font-size: 8pt;
 }
 
 div#quick_user_results a img
@@ -39,23 +33,23 @@ img#quick_user_loading
     width: 20px;
 }
 
-.quick_user_centre
+div.quick_user_links
 {
     text-align: center;
+    margin-bottom: 5x;
 }
 
-.quick_user_bold
+div.quick_user_links a
 {
-    font-weight: bold;
+    margin: 0 10px;
 }
 
-div#quick_user_results
+div.quick_user_result
 {
-    font-size: 8pt;
+    margin-bottom: 10px;
 }
 
-div.quick_user_expand
+.quick_user_centre
 {
-    margin-bottom: 5px;
     text-align: center;
 }

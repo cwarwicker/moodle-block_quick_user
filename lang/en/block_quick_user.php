@@ -15,16 +15,14 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Language strings for block_quick_user
- *
+ * Language strings for block
  * @package    block_quick_user
- * @copyright  2016 Conn Warwicker <conn@cmrwarwicker.com>
+ * @copyright  2019 Conn Warwicker <conn@cmrwarwicker.com>
+ * @link       https://github.com/cwarwicker/moodle-block_quick_user
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
-
-$string = array();
 
 $string['quickcourse'] = 'Quick User';
 $string['pluginname'] = 'Quick User Search';
@@ -36,7 +34,9 @@ $string['moreresults'] = 'More results not shown...';
 $string['lastaccess'] = 'Last Access';
 $string['ago'] = 'ago';
 $string['sendmessage'] = 'Send Message to';
-$string['quick_user:search'] = 'Search';
-$string['quick_user:viewdetails'] = 'View Details';
-$string['quick_user:viewloginas'] = 'View Login As';
+$string['resultlimit'] = 'Result Limit';
+$string['resultlimit:desc'] = 'Maximum amount of results to show. (Set as "0" for no limit)';
+$string['quick_user:search'] = 'Search users on this course';
+$string['quick_user:searchall'] = 'Search all users in the site';
 $string['quick_user:addinstance'] = 'Add Instance';
+$string['quick_user:addmyinstance'] = 'Add Instance to My Dashboard';

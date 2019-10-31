@@ -15,17 +15,18 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version file
+ * Settings for block_quick_user
  * @package    block_quick_user
  * @copyright  2019 Conn Warwicker <conn@cmrwarwicker.com>
- * @link       https://github.com/cwarwicker/moodle-block_quick_user
+ * @link       https://github.com/cwarwicker/moodle-block_quick_course
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2018072504;
-$plugin->requires = 2016052300;
-$plugin->component = 'block_quick_user';
-$plugin->maturity   = MATURITY_STABLE;
-$plugin->release    = '1.1';
+$settings->add(
+    new admin_setting_configtext('block_quick_user/limit',
+    get_string('resultlimit', 'block_quick_user'),
+    get_string('resultlimit:desc', 'block_quick_user'),
+    50)
+);

@@ -15,17 +15,17 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Capabilities for block_quick_user
- *
+ * Capabilities for block
  * @package    block_quick_user
- * @copyright  2016 Conn Warwicker <conn@cmrwarwicker.com>
+ * @copyright  2019 Conn Warwicker <conn@cmrwarwicker.com>
+ * @link       https://github.com/cwarwicker/moodle-block_quick_user
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
 $capabilities = array(
-    
+
     'block/quick_user:addinstance' => array(
         'captype' => 'read',
         'contextlevel' => CONTEXT_BLOCK,
@@ -36,7 +36,18 @@ $capabilities = array(
             'manager' => CAP_ALLOW
         )
     ),
-    
+
+    'block/quick_user:myaddinstance' => array(
+        'captype' => 'read',
+        'contextlevel' => CONTEXT_BLOCK,
+        'archetypes' => array(
+            'student' => CAP_PREVENT,
+            'teacher' => CAP_ALLOW,
+            'editingteacher' => CAP_ALLOW,
+            'manager' => CAP_ALLOW
+        )
+    ),
+
     'block/quick_user:search' => array(
         'riskbitmask' => RISK_PERSONAL,
         'captype' => 'read',
@@ -47,6 +58,18 @@ $capabilities = array(
             'editingteacher' => CAP_ALLOW,
             'manager' => CAP_ALLOW
         )
+    ),
+
+    'block/quick_user:searchall' => array(
+        'riskbitmask' => RISK_PERSONAL,
+        'captype' => 'read',
+        'contextlevel' => CONTEXT_BLOCK,
+        'archetypes' => array(
+            'student' => CAP_PREVENT,
+            'teacher' => CAP_PREVENT,
+            'editingteacher' => CAP_PREVENT,
+            'manager' => CAP_PREVENT
+        )
     )
-       
+
 );
