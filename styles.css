@@ -15,6 +15,7 @@ div#quick_user_results
     max-height: 400px;
     overflow-y: auto;
     font-size: 8pt;
+    margin-top: 10px;
 }
 
 div#quick_user_results a img
@@ -33,10 +34,16 @@ img#quick_user_loading
     width: 20px;
 }
 
+div.quick_user_loading
+{
+    text-align: center;
+}
+
 div.quick_user_links
 {
     text-align: center;
     margin-bottom: 5x;
+    display: none;
 }
 
 div.quick_user_links a
@@ -50,6 +57,17 @@ div.quick_user_result
 }
 
 .quick_user_centre
+{
+    text-align: center;
+}
+
+img.quick_user_toggle
+{
+    width: 16px;
+    vertical-align: middle;
+}
+
+p.quick_user_clear
 {
     text-align: center;
 }

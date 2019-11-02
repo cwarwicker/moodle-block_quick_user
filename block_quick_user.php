@@ -49,16 +49,31 @@ class block_quick_user extends block_base
         }
 
         // Search bar.
-        $this->content->text .= "<p class='quick_user_centre'><small><a href='#' id='quick_user_clear'>"
-        .get_string('clear', 'block_quick_user')."</a></small></p>";
 
-        $this->content->text .= "<div id='quick_user'>
-            <form id='quick_user_form' method='post' action=''>
-                <input type='text' id='quick_user_search' />
-            </form>
-        </div>";
+        // Clear results link.
+        $this->content->text .= html_writer::start_tag('p', array('class' => 'quick_user_clear'));
 
-        $this->content->text .= "<br><div id='quick_user_results'></div>";
+            $this->content->text .= html_writer::tag(
+                'small',
+                html_writer::link('#', get_string('clear', 'block_quick_user'),
+                array('id' => 'quick_user_clear'))
+            );
+
+        $this->content->text .= html_writer::end_tag('p');
+
+        // Form input.
+        $this->content->text .= html_writer::start_tag('div', array('id' => 'quick_user'));
+
+            $this->content->text .= html_writer::tag(
+                'form',
+                html_writer::tag('input', null, array('id' => 'quick_user_search', 'type' => 'text')),
+                array('id' => 'quick_user_form', 'method' => 'post', 'action' => '')
+            );
+
+        $this->content->text .= html_writer::end_tag('div');
+
+        // Results.
+        $this->content->text .= html_writer::tag('div', null, array('id' => 'quick_user_results'));
 
         $this->page->requires->js_call_amd('block_quick_user/module', 'init', array($COURSE->id));
 

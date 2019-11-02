@@ -1,11 +1,12 @@
 <div class='quick_user_result'>
 
-    <div class='quick_user_user'>
+    <div>
+        <img src='{{config.wwwroot}}/blocks/quick_user/pix/plus.png' class='quick_user_toggle' data-userid='{{user.id}}' />
         {{{user.picture}}}
         <a href='{{config.wwwroot}}/user/profile.php?id={{user.id}}' target='_blank' title='{{title}}'>{{user.name}}</a>
     </div>
 
-    <div class='quick_user_links'>
+    <div class='quick_user_links' id='hidden_user_{{user.id}}'>
         {{#links}}
             {{#.}}
                 <a href="{{{url}}}" target="_blank" title="{{title}}"><img src="{{img}}" alt="{{title}}" /></a>

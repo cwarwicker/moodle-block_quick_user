@@ -26,6 +26,23 @@ define(['jquery'], function($) {
 
     module.bind = function(courseID){
 
+        // Result links toggle.
+        $('.quick_user_toggle').each( function(){
+
+            $(this).off('click');
+            $(this).on('click', function(){
+
+                var id = $(this).data('userid');
+                $('#hidden_user_' + id).toggle();
+
+                var pix = M.cfg.wwwroot + '/blocks/quick_user/pix/' +
+                    ( ( $(this).attr('src').indexOf('plus.png') > -1 ) ? 'minus.png' : 'plus.png' );
+                $(this).attr('src', pix);
+
+            });
+
+        });
+
         // Submit form.
         $('#quick_user_form').off('submit');
         $('#quick_user_form').on('submit', function(e){
@@ -45,7 +62,7 @@ define(['jquery'], function($) {
 
             // Display the loading gif while the results are fetched.
             var img = '<img id="quick_user_loading" src="' + M.cfg.wwwroot + '/blocks/quick_user/pix/load.gif" />';
-            results.html('<div class="quick_user_centre">' + img + '</div>');
+            results.html('<div class="quick_user_loading">' + img + '</div>');
 
             // Ajax call to search script.
             $.post(M.cfg.wwwroot + '/blocks/quick_user/ajax/search.php', {
