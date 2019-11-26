@@ -39,4 +39,4 @@ $string['resultlimit:desc'] = 'Maximum amount of results to show. (Set as "0" fo
 $string['quick_user:search'] = 'Search users on this course';
 $string['quick_user:searchall'] = 'Search all users in the site';
 $string['quick_user:addinstance'] = 'Add Instance';
-$string['quick_user:addmyinstance'] = 'Add Instance to My Dashboard';
+$string['quick_user:myaddinstance'] = 'Add Instance to My Dashboard';

@@ -70,6 +70,7 @@ class search {
         $sqlparams = array( CONTEXT_COURSE, $this->course->id, $search, $search, $search, 0 );
 
         // If we have the capability to searchall users, remove the join section and just search in mdl_user.
+        // Only if it's on the site home though. If it's on a course, we still want to search those users.
         if (has_capability('block/quick_user:searchall', $this->context) && $this->course->id == SITEID) {
             $sql['join'] = '';
             $sqlparams = array( $search, $search, $search, 0 );

@@ -48,6 +48,11 @@ class block_quick_user extends block_base
             return $this->content;
         }
 
+        // If it's not on a course, then they need searchall, as by default it searches course users.
+        if ($COURSE->id === SITEID && !has_capability('block/quick_user:searchall', $context)) {
+            return $this->content;
+        }
+
         // Search bar.
 
         // Clear results link.

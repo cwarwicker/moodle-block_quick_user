@@ -26,6 +26,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $capabilities = array(
 
+    // Add the block to a course.
     'block/quick_user:addinstance' => array(
         'captype' => 'read',
         'contextlevel' => CONTEXT_BLOCK,
@@ -37,6 +38,7 @@ $capabilities = array(
         )
     ),
 
+    // Add the block to My Dashboard.
     'block/quick_user:myaddinstance' => array(
         'captype' => 'read',
         'contextlevel' => CONTEXT_BLOCK,
@@ -48,6 +50,7 @@ $capabilities = array(
         )
     ),
 
+    // Search users in the course.
     'block/quick_user:search' => array(
         'riskbitmask' => RISK_PERSONAL,
         'captype' => 'read',
@@ -60,6 +63,7 @@ $capabilities = array(
         )
     ),
 
+    // Search all users in the system.
     'block/quick_user:searchall' => array(
         'riskbitmask' => RISK_PERSONAL,
         'captype' => 'read',

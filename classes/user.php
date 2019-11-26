@@ -118,7 +118,8 @@ class user {
                     'sesskey' => sesskey()
                 )),
                 'title' => get_string('loginas') . ' ' . $user->fullname(),
-                'img' => $OUTPUT->image_url('t/lock')
+                'img' => $OUTPUT->image_url('t/lock'),
+                'target' => '_self'
             );
 
         }
@@ -127,7 +128,8 @@ class user {
         $links[] = array(
             'url' => new \moodle_url('/message/index.php', array('id' => $user->get('id'))),
             'title' => get_string('sendmessage', 'block_quick_user') . ' ' . $user->fullname(),
-            'img' => $OUTPUT->image_url('t/messages')
+            'img' => $OUTPUT->image_url('t/messages'),
+            'target' => '_blank'
         );
 
         // Is block_elbp installed? If so, display a link to their ELBP page.
@@ -138,7 +140,8 @@ class user {
             $links[] = array(
                 'url' => new \moodle_url('/blocks/elbp/view.php', array('id' => $user->get('id'))),
                 'title' => get_string('viewelbp', 'block_elbp') . ' ' . $user->fullname(),
-                'img' => $OUTPUT->image_url('t/user')
+                'img' => $OUTPUT->image_url('t/user'),
+                'target' => '_blank'
             );
 
         }
