@@ -59,7 +59,7 @@ class search {
         // Build up the SQL to search the courses.
         // This searches the user's enrolled courses and any courses in any category they are enrolled onto.
         $sql = array();
-        $sql['select'] = "SELECT u.id  ";
+        $sql['select'] = "SELECT DISTINCT u.id  ";
         $sql['from'] = "FROM {user} u  ";
         $sql['join'] = "INNER JOIN {role_assignments} r on r.userid = u.id
                         INNER JOIN {context} x on x.id = r.contextid and x.contextlevel = ? and x.instanceid = ?  ";
@@ -77,6 +77,7 @@ class search {
         }
 
         $fullsql = implode(" ", $sql);
+
         $results['exact'] = $DB->get_records_sql($fullsql, $sqlparams, 0, $limit);
 
         // Now the similar results.
