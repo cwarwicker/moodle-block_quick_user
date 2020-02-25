@@ -33,7 +33,7 @@ class block_quick_user extends block_base
 
     public function get_content() {
 
-        global $CFG, $PAGE, $COURSE;
+        global $COURSE;
 
         if ($this->content !== null) {
             return $this->content;

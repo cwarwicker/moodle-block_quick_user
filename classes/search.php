@@ -29,7 +29,7 @@ defined('MOODLE_INTERNAL') || die();
 
 class search {
 
-    private $course, $context, $results = [];
+    private $course, $context;
 
     public function set_course(\stdClass $course) {
         $this->course = $course;

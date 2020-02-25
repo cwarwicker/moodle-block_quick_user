@@ -1,73 +1,60 @@
-div#quick_user
-{
+div#quick_user {
     width: 90%;
     margin: auto;
 }
 
-div#quick_user input
-{
+div#quick_user input {
     width: 100%;
     text-align: left;
 }
 
-div#quick_user_results
-{
+div#quick_user_results {
     max-height: 400px;
     overflow-y: auto;
-    font-size: 8pt;
+    font-size: 11px;
     margin-top: 10px;
 }
 
-div#quick_user_results a img
-{
+div#quick_user_results a img {
     width: 12px;
 }
 
-div#quick_user_results a img.userpicture
-{
+div#quick_user_results a img.userpicture {
     width: 20px;
     height: 20px;
 }
 
-img#quick_user_loading
-{
+img#quick_user_loading {
     width: 20px;
 }
 
-div.quick_user_loading
-{
+div.quick_user_loading {
     text-align: center;
 }
 
-div.quick_user_links
-{
+div.quick_user_links {
     text-align: center;
-    margin-bottom: 5x;
+    margin-bottom: 5px;
     display: none;
 }
 
-div.quick_user_links a
-{
+div.quick_user_links a {
     margin: 0 10px;
 }
 
-div.quick_user_result
-{
+div.quick_user_result {
     margin-bottom: 10px;
 }
 
-.quick_user_centre
-{
+.quick_user_centre {
     text-align: center;
 }
 
-img.quick_user_toggle
-{
+img.quick_user_toggle {
     width: 16px;
     vertical-align: middle;
 }
 
-p.quick_user_clear
-{
+p.quick_user_clear {
     text-align: center;
 }
