@@ -102,7 +102,7 @@ class user {
         $context = $PAGE->context;
         $course = \get_course($context->instanceid);
 
-        $renderer = $PAGE->get_renderer('block_quick_course');
+        $renderer = $PAGE->get_renderer('block_quick_user');
 
         $links = array();
 

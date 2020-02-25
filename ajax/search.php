@@ -29,8 +29,8 @@ $searchterm = required_param('search', PARAM_TEXT);
 $courseid = required_param('course', PARAM_INT);
 
 $context = context_course::instance($courseid);
-if (!has_capability('block/quick_course:search', $context) &&
-    !has_capability('block/quick_course:searchall', $context)) {
+if (!has_capability('block/quick_user:search', $context) &&
+    !has_capability('block/quick_user:searchall', $context)) {
     exit;
 }
 
@@ -57,7 +57,7 @@ $output = "";
 
 // Exact Results.
 $output .= html_writer::tag('p', get_string('exactresults', 'block_quick_user'),
-    array('class' => 'quick_course_results_heading'));
+    array('class' => 'quick_user_results_heading'));
 
 // If there are exact results.
 if ($results['exact']) {
@@ -77,7 +77,7 @@ $output .= html_writer::empty_tag('hr', null);
 
 // Similar Results.
 $output .= html_writer::tag('p', get_string('similarresults', 'block_quick_user'),
-    array('class' => 'quick_course_results_heading'));
+    array('class' => 'quick_user_results_heading'));
 
 // If there are similar results.
 if ($results['similar']) {

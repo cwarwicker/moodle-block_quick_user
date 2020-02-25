@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Settings for block_quick_user
+ * Renderer class
  * @package    block_quick_user
  * @copyright  2019 Conn Warwicker <conn@cmrwarwicker.com>
  * @link       https://github.com/cwarwicker/moodle-block_quick_user
@@ -24,9 +24,6 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$settings->add(
-    new admin_setting_configtext('block_quick_user/limit',
-    get_string('resultlimit', 'block_quick_user'),
-    get_string('resultlimit:desc', 'block_quick_user'),
-    50)
-);
+class block_quick_user_renderer extends plugin_renderer_base {
+
+}
