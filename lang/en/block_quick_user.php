@@ -40,3 +40,4 @@ $string['quick_user:search'] = 'Search users on this course';
 $string['quick_user:searchall'] = 'Search all users in the site';
 $string['quick_user:addinstance'] = 'Add instance';
 $string['quick_user:myaddinstance'] = 'Add instance to My Dashboard';
+$string['privacy:metadata'] = 'The Quick User block only displays existing user data.';
