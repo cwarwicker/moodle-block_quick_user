@@ -58,3 +58,7 @@ img.quick_user_toggle {
 p.quick_user_clear {
     text-align: center;
 }
+
+p.quick_user_results_heading {
+    text-align: center;
+}
