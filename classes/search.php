@@ -27,21 +27,55 @@ namespace block_quick_user;
 
 defined('MOODLE_INTERNAL') || die();
 
+/**
+ * Search class for quick_user
+ * @package    block_quick_user
+ * @copyright  2019 Conn Warwicker <conn@cmrwarwicker.com>
+ * @link       https://github.com/cwarwicker/moodle-block_quick_user
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 class search {
 
-    private $course, $context;
+    /**
+     * Course object
+     * @var stdClass
+     */
+    private $course;
 
+    /**
+     * Conext object
+     * @var context
+     */
+    private $context;
+
+    /**
+     * Set the course we are searching in.
+     * @param \stdClass $course
+     * @return void
+     */
     public function set_course(\stdClass $course) {
         $this->course = $course;
     }
 
+    /**
+     * Set the context we are searching in.
+     * @param \context $context
+     * @return void
+     */
     public function set_context(\context $context) {
         $this->context = $context;
     }
 
+    /**
+     * Get the results of the search.
+     * @param $search Text to search for
+     * @return array
+     * @throws \coding_exception
+     * @throws \dml_exception
+     */
     public function results($search) {
 
-        global $CFG, $DB, $USER;
+        global $DB;
 
         $results = array(
             'exact' => array(),

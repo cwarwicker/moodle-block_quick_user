@@ -24,13 +24,29 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+/**
+ * Quick User block
+ * @package    block_quick_user
+ * @copyright  2019 Conn Warwicker <conn@cmrwarwicker.com>
+ * @link       https://github.com/cwarwicker/moodle-block_quick_user
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 class block_quick_user extends block_base
 {
 
+    /**
+     * Initialise block and set title
+     * @throws coding_exception
+     */
     public function init() {
         $this->title = get_string('pluginname', 'block_quick_user');
     }
 
+    /**
+     * Get the content to display in the block
+     * @return stdClass|stdObject
+     * @throws coding_exception
+     */
     public function get_content() {
 
         global $COURSE;

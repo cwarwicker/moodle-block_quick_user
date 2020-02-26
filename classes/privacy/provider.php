@@ -13,6 +13,14 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+/**
+ * Privacy provider class
+ *
+ * @package    block_quick_user\privacy
+ * @copyright  2019 Conn Warwicker <conn@cmrwarwicker.com>
+ * @link       https://github.com/cwarwicker/moodle-block_quick_user
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
 namespace block_quick_user\privacy;
 
@@ -23,7 +31,7 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Privacy provider class
  *
- * @package    block_quick_user\privacy
+ * @package    block_quick_user
  * @copyright  2019 Conn Warwicker <conn@cmrwarwicker.com>
  * @link       https://github.com/cwarwicker/moodle-block_quick_user
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later

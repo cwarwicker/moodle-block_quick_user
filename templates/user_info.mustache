@@ -20,6 +20,15 @@
     This template renders the HTML for a user in the search results.
     Including their: picture, profile link and any other links.
 
+    Example context (json):
+    {
+        "config": Moodle $CFG object,
+        "title": "Test Student",
+        "user": {"id": 1, "name": "Test Student", "picture": "http://moodle.site/pluginfile.php/1/user/icon/boost/f2?rev=16"},
+        "links": [
+            {"url": "http://moodle.site/message/index.php?id=1", "title": "Send Message", "target": "_blank", "img": "t/messages"}
+        ]
+    }
 }}
 <div class='quick_user_result'>
 

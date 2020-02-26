@@ -27,10 +27,56 @@ namespace block_quick_user;
 
 defined('MOODLE_INTERNAL') || die();
 
+/**
+ * User class for quick_user
+ * @package    block_quick_user
+ * @copyright  2019 Conn Warwicker <conn@cmrwarwicker.com>
+ * @link       https://github.com/cwarwicker/moodle-block_quick_user
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 class user {
 
-    protected $id, $firstname, $lastname, $username, $idnumber, $lastaccess;
+    /**
+     * User ID
+     * @var int
+     */
+    protected $id;
 
+    /**
+     * User firstname
+     * @var string
+     */
+    protected $firstname;
+
+    /**
+     * User lastname
+     * @var string
+     */
+    protected $lastname;
+
+    /**
+     * User username
+     * @var string
+     */
+    protected $username;
+
+    /**
+     * User ID Number
+     * @var string
+     */
+    protected $idnumber;
+
+    /**
+     * User Last Access Timestamp
+     * @var int
+     */
+    protected $lastaccess;
+
+    /**
+     * user constructor.
+     * @param $id
+     * @throws \dml_exception
+     */
     public function __construct($id) {
 
         global $DB;
@@ -90,6 +136,14 @@ class user {
         return $DB->get_record('user', array('id' => $this->id));
     }
 
+    /**
+     * Return the HTML to be displayed as the user info in the results.
+     * @param int $id user ID
+     * @return string|null
+     * @throws \coding_exception
+     * @throws \dml_exception
+     * @throws \moodle_exception
+     */
     public static function info($id) {
 
         global $CFG, $PAGE, $OUTPUT, $USER;
