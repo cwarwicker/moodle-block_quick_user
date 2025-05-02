@@ -4,10 +4,7 @@ Quick User Search
 [![Open Issues](https://img.shields.io/github/issues/cwarwicker/moodle-block_quick_user)](https://github.com/cwarwicker/moodle-block_quick_user/issues)
 [![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-![Moodle 3.4 supported](https://img.shields.io/badge/Moodle-3.4-brightgreen)
-![Moodle 3.5 supported](https://img.shields.io/badge/Moodle-3.5-brightgreen)
-![Moodle 3.6 supported](https://img.shields.io/badge/Moodle-3.6-brightgreen)
-![Moodle 3.7 supported](https://img.shields.io/badge/Moodle-3.7-brightgreen)
+![Moodle 5.0 supported](https://img.shields.io/badge/Moodle-5.0-brightgree)
 
 
 The quick_user block allows you to search quickly for users, without having to go through the Moodle user interface.
